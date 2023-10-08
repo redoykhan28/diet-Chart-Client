@@ -1,0 +1,50 @@
+[
+    {
+        "id": "01",
+        "name": "Broccoli",
+        "quantity": "100",
+        "unit": "gm",
+        "fat": "0.37",
+        "protine": "2.82",
+        "crab": "6.64",
+        "fiber": "2.6",
+        "netCrab": "4",
+        "calories": "34"
+    },
+    {
+        "id": "02",
+        "name": "Palong Shak (Spinach)",
+        "quantity": "100",
+        "unit": "gm",
+        "fat": "0.39",
+        "protine": "2.86",
+        "crab": "3.63",
+        "fiber": "2.2",
+        "netCrab": "1.4",
+        "calories": "23"
+    },
+    {
+        "id": "03",
+        "name": "Apple",
+        "quantity": "100",
+        "unit": "gm",
+        "fat": "0.17",
+        "protine": "0.26",
+        "crab": "13.81",
+        "fiber": "2.4",
+        "netCrab": "10.6",
+        "calories": "52"
+    },
+    {
+        "id": "04",
+        "name": "Kamala (Orange)",
+        "quantity": "150",
+        "unit": "kg",
+        "fat": "0.12",
+        "protine": "0.94",
+        "crab": "11.75",
+        "fiber": "2.35",
+        "netCrab": "9.1",
+        "calories": "47"
+    }
+]
