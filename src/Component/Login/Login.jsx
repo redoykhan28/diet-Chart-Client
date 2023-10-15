@@ -15,7 +15,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     //use context
-    const { login, googleSignin, passwordReset } = useContext(authProvider);
+    const { login, googleSignin } = useContext(authProvider);
 
     //state for error
     const [error, setError] = useState(null)
@@ -108,7 +108,7 @@ const Login = () => {
 
 
     return (
-        <div data-aos="fade-up" className=' rounded-3xl shadow-sm flex justify-center items-center w-96  mb-10 mx-auto'>
+        <div data-aos="fade-up" className=' rounded-3xl shadow-sm flex justify-center items-center lg:w-96  mb-10 mx-auto'>
             <div className="card w-96 p-8  ">
                 <h4 className='text-center text-2xl text-[#3CBD72] font-semibold mt-4 mb-6'>Login</h4>
                 <form onSubmit={handleSubmit(handleLogin)}>

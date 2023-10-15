@@ -99,8 +99,8 @@ const Signup = () => {
 
 
     return (
-        <div className='rounded-lg flex justify-center items-center lg:w-1/2  mx-auto'>
-            <div className="card p-8 bg-base-100 ">
+        <div data-aos="fade-up" className=' rounded-3xl shadow-sm flex justify-center items-center lg:w-1/2  mb-10 mx-auto'>
+            <div className="card p-8 ">
                 <h4 className='text-center text-2xl mt-16 text-[#3CBD72] mb-6 font-semibold'>SIGNUP</h4>
                 <form onSubmit={handleSubmit(handlesignup)}>
 

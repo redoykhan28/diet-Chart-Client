@@ -62,84 +62,84 @@ const TotalCharts = () => {
 
 
     return (
-        <div>
-            <div data-aos="fade-up">
-                <h1 className='text-center text-2xl mt-12 font-semibold'>Total Diet-Charts</h1>
+        <div data-aos="fade-up">
 
-                <div>
-                    <div className="overflow-x-auto mt-8">
-                        <table className="table p-4 mb-10 w-11/12 mx-auto rounded-2xl shadow-xl">
-                            <thead className='bg-gradient-to-r from-red-600 to-orange-400 text-white'>
-                                <tr>
-                                    <th>Food Name</th>
-                                    <th>Quantity</th>
-                                    <th>Unit</th>
-                                    <th>Fat</th>
-                                    <th>Protine</th>
-                                    <th>Carb</th>
-                                    <th>Fiber</th>
-                                    <th>Net Carb</th>
-                                    <th>Calories</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+            <h1 className='text-center text-2xl mt-12 font-semibold'>Total Diet-Charts</h1>
 
-                                {
-                                    records?.map((chart, i) =>
-                                        <tr>
+            <div className="overflow-x-auto mt-8">
+                <table className="table mt-10  mb-10 w-11/12 mx-auto rounded-2xl shadow-xl">
+                    <thead className='bg-gradient-to-r from-red-600 to-orange-400 text-white'>
+                        <tr>
+                            <th>Food Name</th>
+                            <th>Quantity</th>
+                            <th>Unit</th>
+                            <th>Fat</th>
+                            <th>Protine</th>
+                            <th>Carb</th>
+                            <th>Fiber</th>
+                            <th>Net Carb</th>
+                            <th>Calories</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                                            <td>
-                                                <div className='flex items-center'>
-                                                    {chart?.name}
-                                                </div>
-
-                                            </td>
-                                            <td>{chart?.quantity}</td>
-                                            <td>{chart?.unit}</td>
-                                            <td>{chart?.fat}</td>
-                                            <td>{chart?.protine}</td>
-                                            <td>{chart?.crab}</td>
-                                            <td>{chart?.fiber}</td>
-                                            <td>{chart?.netCrab}</td>
-                                            <td>{chart?.calories}</td>
-
-
-                                            <td>
-                                                <button onClick={() => handleModal(chart)} className="btn btn-xs btn-error hover:bg-red-600 text-white">Delete</button>
-                                            </td>
-
-
-
-
-                                        </tr>
-                                    )
-                                }
-
-
-
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div className="join mb-10">
-                        <button onClick={prePage} className="join-item btn">Prev</button>
                         {
-                            numbers.map((n, i) => (
-                                <button key={i + 1} onClick={() => changeCpage(n)} className={`join-item btn ${currentPage === n ? ' btn-active bg-orange-400 text-white' : ''}`}>{n}</button>
-                            ))
+                            records?.map((chart, i) =>
+                                <tr>
+
+                                    <td>
+                                        <div className='flex items-center'>
+                                            {chart?.name}
+                                        </div>
+
+                                    </td>
+                                    <td>{chart?.quantity}</td>
+                                    <td>{chart?.unit}</td>
+                                    <td>{chart?.fat}</td>
+                                    <td>{chart?.protine}</td>
+                                    <td>{chart?.crab}</td>
+                                    <td>{chart?.fiber}</td>
+                                    <td>{chart?.netCrab}</td>
+                                    <td>{chart?.calories}</td>
+
+
+                                    <td>
+                                        <button onClick={() => handleModal(chart)} className="btn btn-xs btn-error hover:bg-red-600 text-white">Delete</button>
+                                    </td>
+
+
+
+
+                                </tr>
+                            )
                         }
-                        <button onClick={nextPage} className="join-item btn">Next</button>
-                    </div>
-                </div>
 
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div className="join mb-10">
+                <button onClick={prePage} className="join-item btn">Prev</button>
                 {
-                    <CancelModal deleted={deleted} setDeleted={setDeleted}></CancelModal>
+                    numbers.map((n, i) => (
+                        <button key={i + 1} onClick={() => changeCpage(n)} className={`join-item btn ${currentPage === n ? ' btn-active bg-orange-400 text-white' : ''}`}>{n}</button>
+                    ))
                 }
+                <button onClick={nextPage} className="join-item btn">Next</button>
+            </div>
+
+            {
+                <CancelModal deleted={deleted} setDeleted={setDeleted}></CancelModal>
+            }
 
 
-                <Toaster />
-            </div >
+            <Toaster />
+
+
         </div>
     );
 };

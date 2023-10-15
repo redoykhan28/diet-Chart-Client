@@ -78,61 +78,60 @@ const TotalUser = () => {
         <div data-aos="fade-up">
             <h1 className='text-center text-2xl mt-12 font-semibold'>Total Users</h1>
 
-            <div>
-                <div className="overflow-x-auto mt-8">
-                    <table className="table p-4 mb-10 w-11/12 mx-auto rounded-2xl shadow-xl">
-                        <thead className='bg-gradient-to-r from-red-600 to-orange-400 text-white'>
-                            <tr>
-                                <th>Sl ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            <div className="overflow-x-auto mt-8">
+                <table className="table p-4 mb-10 w-11/12 mx-auto rounded-2xl shadow-xl">
+                    <thead className='bg-gradient-to-r from-red-600 to-orange-400 text-white'>
+                        <tr>
+                            <th>Sl ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                            {
-                                records?.map((user, i) =>
-                                    <tr key={user._id}>
+                        {
+                            records?.map((user, i) =>
+                                <tr key={user._id}>
 
-                                        <td>{user?.id}</td>
-                                        <td>
-                                            <div className='flex items-center'>
-                                                {user.username}
-                                            </div>
+                                    <td>{user?.id}</td>
+                                    <td>
+                                        <div className='flex items-center'>
+                                            {user.username}
+                                        </div>
 
-                                        </td>
-                                        <td>{user?.email}</td>
+                                    </td>
+                                    <td>{user?.email}</td>
 
-                                        <td>
-                                            {
-                                                user?.role === "admin" ?
-                                                    <td className='font-bold'>Admin</td>
-                                                    :
-                                                    <Link onClick={() => handleAdmin(user)} className='btn btn-xs bg-gradient-to-r from-red-600 to-orange-400 text-white hover:to-red-600  transition-all duration-300 hover:delay-300'>Make Admin</Link>
-                                            }
-                                        </td>
+                                    <td>
+                                        {
+                                            user?.role === "admin" ?
+                                                <td className='font-bold'>Admin</td>
+                                                :
+                                                <Link onClick={() => handleAdmin(user)} className='btn btn-sm bg-gradient-to-r from-red-600 to-orange-400 text-white hover:to-red-600  transition-all duration-300 hover:delay-300'>Make Admin</Link>
+                                        }
+                                    </td>
 
-                                    </tr>
-                                )
-                            }
-                        </tbody>
-                    </table>
-                </div>
-
-                <div className="join mb-10">
-                    <button onClick={prePage} className="join-item btn">Prev</button>
-                    {
-                        numbers.map((n, i) => (
-                            <button key={i + 1} onClick={() => changeCpage(n)} className={`join-item btn ${currentPage === n ? 'btn-active bg-orange-400 text-white' : ''}`}>{n}</button>
-                        ))
-                    }
-
-                    <button onClick={nextPage} className="join-item btn">Next</button>
-                </div>
-
+                                </tr>
+                            )
+                        }
+                    </tbody>
+                </table>
             </div>
 
+
+
+
+            <div className="join mb-10">
+                <button onClick={prePage} className="join-item btn">Prev</button>
+                {
+                    numbers.map((n, i) => (
+                        <button key={i + 1} onClick={() => changeCpage(n)} className={`join-item btn ${currentPage === n ? 'btn-active bg-orange-400 text-white' : ''}`}>{n}</button>
+                    ))
+                }
+
+                <button onClick={nextPage} className="join-item btn">Next</button>
+            </div>
             <Toaster />
         </div >
     );
